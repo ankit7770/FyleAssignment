@@ -17,6 +17,11 @@ public class BankController {
     @Autowired
     private BankService bankService;
 
+    @RequestMapping(method = RequestMethod.GET, value = "home")
+    public String homePage() {
+        return "Welcome";
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "bankDetails")
     public BankBrances bankDetails(@RequestParam String ifscCode) {
         return bankService.getBankdetails(ifscCode);
